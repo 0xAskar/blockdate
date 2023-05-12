@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,800;1,600;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Press+Start+2P&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Sen:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+:root {}
+
+html {
+
+  color: #f7f7f8;
+
+}
+
+body {
+  --col-data-border: 1px solid rgba(33, 33, 33, 0.497);
+  --ui-card-bg: rgb(36, 36, 36);
+  --ui-card-border: 1px solid rgb(23, 23, 23);
+  --rank-bar-gradient: linear-gradient(90deg, rgb(167, 36, 36), rgb(255, 235, 121), rgb(43, 255, 0));
+  --rank-bar-gradient-conic: conic-gradient(rgb(255, 68, 68), rgb(255, 64, 0), rgb(255, 255, 0), rgb(251, 255, 0), rgb(26, 255, 102), rgb(0, 255, 183));
+  --activeMint: #00ffd5;
+  --notActiveMint: #154d43;
+  --nav-dropdown-background: rgb(0, 0, 0);
+  --changeRed: rgb(255, 109, 109);
+  --nav-border: 1px solid rgb(32, 31, 33);
+  --loader-dot-color: black;
+  --mobile-small-box-height: 200px;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(ellipse at top, rgb(10, 7, 26), rgb(0, 0, 0));
+  --col-panel-background: radial-gradient(ellipse at top,
+      rgb(6, 6, 7),
+      rgb(8, 3, 15));
+  
+  --navbar-background: radial-gradient(ellipse at top,
+      rgba(12, 8, 21, 0.789),
+      rgb(0, 0, 0));
+  --overlap-widget-background: rgb(15, 15, 15);
+  --overlap-widget-border: 1px solid rgba(99, 99, 99, 0.44);
+  
+  /* home page widgets and panels */
+  --home-panel-radius: 7px;
+  --home-panel-header-background: rgba(144, 61, 61, 0);
+  --home-panel-background: rgb(27, 27, 27);
+  --panel-title-color: rgb(234, 234, 234);
+  --panel-title-weight: 900;
+
+
+
+  --input-background: rgba(0, 0, 0, 0);
+  --input-focus-background: black;
+  /* IMPORTANT PADDING RULES */
+  /* padding: TOP RIGHT BOTTOM LEFT */
+  --home-panel-padding: 3px 3px 3px 3px;
+  --panel-title-padding: 0px 0px 0px 10px;
+  --home-panel-header-height: 47px;
+  --collection-background: radial-gradient(ellipse at top,
+      rgb(13, 13, 20),
+      rgb(0, 0, 0));
+  font-family: 'Gothic A1', sans-serif;
+  /* font-family: 'Sen', sans-serif; */
+  font-family: 'Nunito', sans-serif;
+  /* font-family: "Quicksand", sans-serif; */
+  --home-panel-title-font-size: 14px;
+  --off-white: rgb(241, 241, 241);
+  --table-head-text-color: rgb(234, 234, 234);
+  --panel-title-size: 17px;
+  --small-panel-title-size: 15px;
+  --small-box-height: 400px;
+  --table-background: rgb(26, 26, 26);
+  --small-panel-content-height: calc(var(--small-box-height) - var(--small-panel-title-height));
+  /* TABLES */
+  --small-table-head-size: 11px;
+  --small-table-row-size: 13px;
+  --table-row-font-size: 13px;
+  --table-row-alternate-background: rgb(18, 18, 18);
+  --green-number: #1ddd96;
+  --red-number: #ef5050;
+  --table-row-hover-background: rgb(37, 37, 37);
+  --large-table-font-size: 14px;
+  --table-background: rgb(29, 35, 127);
+  --table-head-background: rgb(138, 54, 54);
+  --panel-background: #121212;
+  --home-panel-border-radius: 0px;
+  --active-text: #00ffd8;
+  --active-text-shadow: rgb(179, 178, 178);
+  --disabled-text: gray;
+  --green-background: rgba(9, 20, 12, 0.454);
+  --navbar-border-radius: 12px;
+  --green-shadow: 0px 0px 4px rgba(169, 255, 199, 0.396);
+  --input-border: 1px solid rgb(40, 40, 40);
+  background: rgb(0, 0, 0);
+  --hp-bg: radial-gradient(ellipse at center, #eeeeff, rgb(105, 52, 155));
+
+  --hp-bg: rgb(24, 24, 24);
+  /* BORDERS */
+
+  --report-card-border: 1px solid rgb(23, 23, 23);
+  /* COLORS */
+
+  --primary-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.153);
+
+  /* REPORTS */
+  --report-card-hover-background: rgb(13, 13, 13);
+  --report-card-border-hover: 1px solid rgb(34, 34, 34);
+  /* LAYOUT */
+
+
+  --hp-col-title-font-size: 20px;
+
+  /* INPUT */
+  --input-bg: rgba(34, 34, 34, 0);
+  --primary-input-bg: black;
+  --card-input-bg: rgb(29, 29, 29);
+  --card-input-font-color: rgb(212, 212, 212);
+  --card-input-placeholder-color: rgb(166, 166, 166);
+  --card-input-bg-focus: rgb(10, 10, 10);
+  --card-input-font-size: 14px;
+  --card-input-border: 1px solid rgb(20, 20, 20);
+  --card-input-border-focus: 1px solid rgb(43, 43, 43);
+  --card-input-padding: 10px;
+  --card-input-font-family: 'Gothic A1', sans-serif;
+  --card-input-focus: rgb(35, 35, 35);
+
+
+  --list-input-bg: rgb(33, 33, 33);
+  --input-label-font-size: 10px;
+  --primary-input-border: 1px solid rgb(31, 31, 31);
+  --primary-input-radius: 4px;
+  --primary-input-bg: rgb(18, 18, 18);
+  /* WIDGETS */
+  --home-panel-box-shadow: 0px 4px 6px 0px rgba(21, 21, 22, 0);
+  --panel-title-time-font-size: 14px;
+  --card-background: rgb(0, 0, 0);
+  --widget-title-font-size: 14px;
+  --widget-header-bg: rgba(0, 0, 0, 0);
+  --widget-inner-border: 1px solid rgb(16, 16, 16);
+  --panel-title-text-opacity: 1.8;
+  --primary-border: 1px solid rgb(31, 33, 33);
+
+  /* DROPDOWN */
+  --dropdown-bg: rgb(0, 0, 0);
+  --dropdown-border: 1px solid rgb(56, 56, 56);
+  --dropdown-hover-bg: rgb(13, 13, 13);
+  --dropdown-radius: 2px;
+  --dropdown-font-size: 13px;
+  --dropdown-font-color: rgb(212, 212, 212);
+  --dropdown-font-weight: bold;
+  --dropdown-row-padding: 10px 10px;
+  --dropdown-shadow: 0px 2px 4px 0px rgb(47, 47, 47);
+
+
+  /* COLLECTION PAGE */
+  --col-panel-title-color: #AAAAAA;
+  --col-panel-title-weight: bold;
+  --col-panel-title-size: 14px;
+  --primary-collection-border: 1px solid rgb(19, 19, 19);
+  --primary-col-border: 1px solid rgb(24, 24, 24);
+
+  /* COLLECTION-PANELS */
+  --col-panel-header-padding: 0px 0px 0px 0px;
+  --col-panel-header-font-size: 14px;
+  --col-panel-header-height: 30px;
+  --col-panel-header-bg: rgb(0, 0, 0);
+  --col-panel-header-border: 1px solid rgba(43, 43, 43, 0.099);
+  --col-panel-header-border-radius: 0px 0px 0px 0px;
+  --col-panel-background: rgba(13, 13, 13, 0);
+  --col-panel-border: 1px solid rgb(29, 29, 29);
+  --col-panel-top-border: 1px solid rgb(29, 29, 29);
+  --col-panel-padding: 5px;
+
+  /* TABLES */
+  --table-head-font-size: 11px;
+  --table-head-font-weight: 400;
+  --table-head-font-color: rgb(132, 132, 132);
+  --table-head-background: var(--main-panel-background);
+  --table-row-font-color: rgb(226, 226, 226);
+
+
+  /* POPUP */
+  --popup-bg: black;
+  --popup-shadow: 0px 2px 10px 0px rgba(255, 255, 255, 0.13);
+  --popup-border: 1px solid rgb(30, 30, 30);
+  --popup-font-size: 14px;
+  --popup-font-color: rgb(212, 212, 212);
+  --popup-font-weight: bold;
+  --popup-radius: 7px;
+  --popup-row-padding: 3px 10px;
+  --popup-title-font-size: 14px;
+  --popup-title-wieght: bold;
+
+  --home-panel-border: var(--primary-border);
+  /* WAR */
+  --wr-panel-bg: black;
+  --wr-panel-border: 1px solid rgb(34, 34, 34);
+  background: rgb(11, 14, 17);
+  --main-background:rgb(11, 14, 17);
+  --main-panel-background: rgb(10, 10, 10);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 18px;
+  overflow: -moz-scrollbars-none;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.web3modal-modal-lightbox {
+  z-index: 1000 !important;
+}
+
+select {
+  background: white;
+}
+
+.web3modal-modal-darkbox {
+  z-index: 1000 !important;
+}
