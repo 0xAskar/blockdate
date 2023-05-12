@@ -1,3 +1,15 @@
 .row {
     display: flex;
 }
+
+.title {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.title:hover {
+      color: #666;
+}

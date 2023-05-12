@@ -37,7 +37,7 @@ const NavLinks = styled.div`
 export default function Navbar() {
   return (
     <Nav>
-      <Logo>BlockDate</Logo>
+      <a className = {Styles.title} href="/">BlockDate</a>
       <NavLinks>
         <a href="/contact">Contact</a>
         

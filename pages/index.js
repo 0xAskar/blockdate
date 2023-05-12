@@ -88,7 +88,7 @@ export default function Home() {
         <div className = {Styles.titlerow}> 
             <div className = {Styles.title}>Welcome to BlockDate</div>
         </div>
-        <div className={Styles.poweredby}>Powered by <a target="_blank" href="https://www.npmjs.com/package/ethereum-block-by-date" target="_blank">ethereum-block-by-date</a></div>
+        <div className={Styles.poweredby}>Powered by <a target="_blank" href="https://www.npmjs.com/package/ethereum-block-by-date">ethereum-block-by-date</a></div>
       <div className={Styles.description}> Choose a date, click convert, and voila! </div>
       <div className = {Styles.row}>
       <Select onChange={(e) => setChain(e.target.value)}>

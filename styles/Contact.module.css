@@ -1,0 +1,27 @@
+.contactcards {
+    display: flex;
+    gap: 0px 10px;
+}
+
+.contactcard {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  gap: 10px;
+}
+
+.info {
+    text-align: left;
+}
+
+.infoTitle {
+    text-align: left;
+    font-weight: bold;
+}
