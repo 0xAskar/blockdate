@@ -1,6 +1,8 @@
 .contactcards {
     display: flex;
     gap: 0px 10px;
+    color: #333;
+
 }
 
 .contactcard {
@@ -15,13 +17,16 @@
   justify-content: left;
   align-items: left;
   gap: 10px;
+  color: #333;
 }
 
 .info {
     text-align: left;
+    color: #333;
 }
 
 .infoTitle {
     text-align: left;
     font-weight: bold;
+    color: #333;
 }

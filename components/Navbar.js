@@ -25,10 +25,11 @@ const Logo = styled.div`
 
 const NavLinks = styled.div`
   a {
-    margin-left: 20px;
+    margin-left: 10px;
     color: #333;
     text-decoration: none;
-
+    display: flex;
+    flex-direction: row;
     &:hover {
       color: #666;
     }
@@ -40,13 +41,12 @@ export default function Navbar() {
     <Nav>
       <a className = {Styles.title} href="/">BlockDate</a>
       <NavLinks>
-        <a href="/contact">Contact</a>
-        
-        <a target="_blank" href = "https://github.com/0xAskar">Askar </a>
-        <Image src={Github} width={15} height={15}/> 
-        <a target="_blank" href="https://github.com/monosux/ethereum-block-by-date"> Library </a>
-        <Image src={Github} width={15} height={15}/> 
-        <a target="_blank" href="https://www.npmjs.com/package/ethereum-block-by-date">NPM</a>
+        <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem', width: '300px' }}>
+          <a href="/contact">Contact</a>          
+          <a target="_blank" href="https://github.com/monosux/ethereum-block-by-date"> Library </a>
+          <a target="_blank" href="https://www.npmjs.com/package/ethereum-block-by-date">NPM</a>
+          <a target="_blank" href = "https://github.com/0xAskar">Askar </a>
+        </div>
       </NavLinks>
     </Nav>
   );
