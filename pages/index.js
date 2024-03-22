@@ -7,9 +7,18 @@ import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Loader from '../components/Loaders/SmallLoader.js';
 import Image from "next/image"
+import Head from "next/head"
 import Github from "../public/images/github.svg"
 
 // pages/index.js and pages/contact.js
+
+
+import EthDater from 'ethereum-block-by-date';
+import Web3 from 'web3';
+import { ethers } from 'ethers';
+const provider = new ethers.CloudflareProvider();
+const dater = new EthDater(provider)
+
 
 const Select = styled.select`
   margin-top: 20px;
@@ -59,31 +68,75 @@ export default function Home() {
     const [chain, setChain] = useState('Ethereum');
     const [errorMessage, setErrorMessage] = useState('');
 
-    const getBlock = async () => {
-        setLoading(true); setErrorMessage(''); setBlock('');
-        // Include the selected chain in the request body
-        try {
-            const res = await fetch('/api/block', { 
-                method: 'POST', 
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ date, chain }) 
-            });
-            const data = await res.json();
-            if (res.status == 200) {
-                setLoading(false)
-                console.log("data: ", data)
-                data.block != null ? setBlock(`Block: ${data.block.block}`) : setBlock("Incorrect date given")
-            } else {setLoading(false); setBlock("There was an error")}
-        } catch (err) {
-            console.log(err); setLoading(false)
-        }
+    // const getBlock = async () => {
+    //     setLoading(true); setErrorMessage(''); setBlock('');
+    //     // Include the selected chain in the request body
+    //     try {
+    //         const res = await fetch('/api/block', { 
+    //             method: 'POST', 
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({ date, chain }) 
+    //         });
+    //         const data = await res.json();
+    //         if (res.status == 200) {
+    //             setLoading(false)
+    //             console.log("data: ", data)
+    //             data.block != null ? setBlock(`Block: ${data.block.block}`) : setBlock("Incorrect date given")
+    //         } else {setLoading(false); setBlock("There was an error")}
+    //     } catch (err) {
+    //         console.log(err); setLoading(false); setErrorMessage("There was an error")
+    //     }
         
+    // }
+
+    async function getBlockData(date) {
+      try {
+        const block = await dater.getDate(new Date(date), true, false);
+        return {block}
+      } catch (err) {
+        console.log(err);
+        return { block: null }
+      }
     }
+
+    const getBlock = async () => {
+      setLoading(true); setErrorMessage(''); setBlock('');
+      // Include the selected chain in the request body
+      try {
+          let data = await getBlockData(date)
+          if (data.block != null) {
+              setLoading(false)
+              console.log("data: ", data)
+              data.block != null ? setBlock(`Block: ${data.block.block}`) : setBlock("Incorrect date given")
+          } else {setLoading(false); setBlock("There was an error")}
+      } catch (err) {
+          console.log(err); setLoading(false); setErrorMessage("There was an error")
+      }
+      
+  }
+
+  const seoTitle = "Date to Ethereum Block Converter";
+  const seoDescription = "Convert a date/time to the closest ethereum block";
 
   return (
     <Container>
+      <Head>
+            <title>{seoTitle}</title>
+            <meta property="og:locale" content="en_US" />
+            <meta property="og:type" content="website" />
+            <meta name="description" content={seoDescription} />
+            <meta property="og:title" content={seoTitle} />
+            <meta property="og:url" content={"https://www.blockanddate.com/"} />
+            <meta property="og:description" content={seoDescription} />
+            <link rel="canonical" href={"https://www.blockanddate.com/"} />
+            <meta name="twitter:title" content={seoTitle}/>
+            <meta name="twitter:description" content={seoDescription}/>
+            <meta name="twitter:url" content={"https://www.blockanddate.com/"}/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+            <meta name="keywords" content={"ethereum, block, date, converter"} />
+        </Head>
       <Navbar />
         <div className = {Styles.titlerow}> 
             <div className = {Styles.title}>Welcome to BlockDate</div>
@@ -100,6 +153,7 @@ export default function Home() {
       <Button onClick={getBlock}>Convert</Button>
       <div className={Styles.block}>{loader ? <Loader/> : null}</div >
       {block != "" && <div style={{color: "black"}}> {block} </div>}
+      {errorMessage != "" && <div style={{color: "red"}}> {"It may take a few tries"} </div>}
     </Container>
   );
 }
