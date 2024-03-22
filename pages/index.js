@@ -1,6 +1,6 @@
 // pages/index.js
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Styles from '../styles/Home.module.css';
 // import fetch from 'node-fetch';
 import styled from 'styled-components';
@@ -89,7 +89,7 @@ export default function Home() {
             <div className = {Styles.title}>Welcome to BlockDate</div>
         </div>
         <div className={Styles.poweredby}>Powered by <a target="_blank" href="https://www.npmjs.com/package/ethereum-block-by-date">ethereum-block-by-date</a></div>
-      <div className={Styles.description}> Choose a date, click convert, and voila! </div>
+      <div className={Styles.description}> Choose a date, click convert, and voila! (it takes a little while) </div>
       <div className = {Styles.row}>
       <Select onChange={(e) => setChain(e.target.value)}>
             <option value="Ethereum">Ethereum</option>
@@ -98,7 +98,8 @@ export default function Home() {
         <Input type="datetime-local" onChange={(e) => setDate(e.target.value)} />
         </div>
       <Button onClick={getBlock}>Convert</Button>
-      <p>{block != '' && !loader ? block : loader ? <Loader/> : null}</p>
+      <div className={Styles.block}>{loader ? <Loader/> : null}</div >
+      {block != "" && <div style={{color: "black"}}> {block} </div>}
     </Container>
   );
 }
